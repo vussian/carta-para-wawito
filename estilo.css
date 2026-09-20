@@ -1,0 +1,847 @@
+/* ========================================
+   ESTILO GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #3b0d19;
+    font-family: Georgia, serif;
+    color: white;
+}
+
+
+/* ========================================
+   PANTALLAS
+======================================== */
+
+.pantalla {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 45px 0;
+
+    overflow: hidden;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 430px;
+    padding: 30px;
+}
+
+
+/* ========================================
+   PANTALLA 1
+======================================== */
+
+.portada {
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(213, 154, 169, 0.35),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #3b0d19,
+            #6d263b
+        );
+}
+
+.flor {
+    font-size: 80px;
+    margin-bottom: 25px;
+
+    animation:
+        flotar 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 18px;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: #f3dce2;
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+button {
+    position: relative;
+    overflow: hidden;
+
+    padding: 16px 32px;
+
+    border: none;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4cf58,
+            #ffe58a,
+            #f4cf58
+        );
+
+    background-size: 200% 200%;
+
+    color: #3b0d19;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        0 0 0 rgba(244, 207, 88, 0);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        botonBrillo 4s ease-in-out infinite;
+}
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.7),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        brilloBoton 3.5s infinite;
+}
+
+button:hover {
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(244, 207, 88, 0.45);
+}
+
+button:active {
+    transform: scale(0.93);
+}
+
+@keyframes botonBrillo {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes brilloBoton {
+
+    0% {
+        left: -100%;
+    }
+
+    35% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+
+/* ========================================
+   ANIMACIÓN FLOR
+======================================== */
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ========================================
+   PANTALLA 2
+======================================== */
+
+.nosotros {
+    background:
+        linear-gradient(
+            180deg,
+            #6d263b,
+            #9b5368
+        );
+}
+
+.nosotros h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.pequeno {
+    color: #f4cf58;
+
+    font-size: 1rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.marco-foto {
+    width: 90%;
+    max-width: 250px;
+
+    margin: 20px auto 30px;
+
+    padding: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.marco-foto img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 15px;
+}
+
+
+/* ========================================
+   PANTALLA 3
+======================================== */
+
+.lo-que-paso {
+    background:
+        linear-gradient(
+            180deg,
+            #9b5368,
+            #4a101f
+        );
+}
+
+.lo-que-paso h2 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+}
+
+.lo-que-paso p:not(.pequeno) {
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+    color: #f8e8ed;
+}
+
+
+/* ========================================
+   PANTALLA 4
+======================================== */
+
+.lo-que-quiero {
+    background:
+        linear-gradient(
+            180deg,
+            #4a101f,
+            #7d3049
+        );
+}
+
+.lo-que-quiero h2 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+}
+
+.lo-que-quiero p:not(.pequeno) {
+    font-size: 1.05rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    color: #f8e8ed;
+}
+
+
+/* ========================================
+   PANTALLA 5
+======================================== */
+
+.momentos {
+    background:
+        linear-gradient(
+            180deg,
+            #7d3049,
+            #a85d73
+        );
+}
+
+.momentos h2 {
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+}
+
+.galeria {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin: 20px auto 30px;
+
+    max-width: 300px;
+}
+
+.galeria img {
+    width: 100%;
+
+    border-radius: 18px;
+
+    display: block;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.momentos p:not(.pequeno) {
+    font-size: 1rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+
+    color: #f8e8ed;
+}
+
+
+/* ========================================
+   PANTALLA 6
+======================================== */
+
+.flores {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a85d73,
+            #4b1624
+        );
+}
+
+.flores h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.flores-amarillas {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.flores p:not(.pequeno) {
+    font-size: 1.05rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+
+    color: #f8e8ed;
+}
+
+
+/* ========================================
+   FOTO DEL RAMO
+======================================== */
+
+.foto-ramo {
+    width: 90%;
+    max-width: 300px;
+
+    margin: 20px auto 25px;
+
+    padding: 7px;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.foto-ramo img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 15px;
+}
+
+
+/* ========================================
+   LLUVIA DE FLORES
+======================================== */
+
+.lluvia-flores {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.lluvia-flores span {
+    position: absolute;
+
+    top: -60px;
+
+    font-size: 25px;
+
+    animation:
+        caerFlor 7s linear infinite;
+}
+
+.lluvia-flores span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.lluvia-flores span:nth-child(2) {
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.lluvia-flores span:nth-child(3) {
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.lluvia-flores span:nth-child(4) {
+    left: 28%;
+    animation-delay: 1s;
+}
+
+.lluvia-flores span:nth-child(5) {
+    left: 36%;
+    animation-delay: 3s;
+}
+
+.lluvia-flores span:nth-child(6) {
+    left: 44%;
+    animation-delay: 5s;
+}
+
+.lluvia-flores span:nth-child(7) {
+    left: 52%;
+    animation-delay: 1.5s;
+}
+
+.lluvia-flores span:nth-child(8) {
+    left: 60%;
+    animation-delay: 3.5s;
+}
+
+.lluvia-flores span:nth-child(9) {
+    left: 68%;
+    animation-delay: 5.5s;
+}
+
+.lluvia-flores span:nth-child(10) {
+    left: 76%;
+    animation-delay: 2.5s;
+}
+
+.lluvia-flores span:nth-child(11) {
+    left: 84%;
+    animation-delay: 4.5s;
+}
+
+.lluvia-flores span:nth-child(12) {
+    left: 92%;
+    animation-delay: 1.8s;
+}
+
+.lluvia-flores span:nth-child(13) {
+    left: 16%;
+    animation-delay: 6s;
+}
+
+.lluvia-flores span:nth-child(14) {
+    left: 48%;
+    animation-delay: 6.5s;
+}
+
+.lluvia-flores span:nth-child(15) {
+    left: 72%;
+    animation-delay: 7s;
+}
+
+.lluvia-flores span:nth-child(16) {
+    left: 88%;
+    animation-delay: 8s;
+}
+
+@keyframes caerFlor {
+
+    0% {
+        transform:
+            translateY(-80px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0.8;
+    }
+}
+
+
+/* ========================================
+   PANTALLA 7
+======================================== */
+
+.final {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(244, 207, 88, 0.15),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #4b1624,
+            #260811
+        );
+}
+
+.final h2 {
+    font-size: 2.6rem;
+    margin-bottom: 28px;
+}
+
+.final p:not(.pequeno) {
+    font-size: 1.05rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+
+    color: #f8e8ed;
+}
+
+.final .firma {
+    color: #f4cf58;
+
+    font-size: 1.2rem;
+
+    margin-top: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   💌 CARTA SECRETA
+======================================== */
+
+.carta-secreta {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(25, 3, 10, 0.82);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+    z-index: 10000;
+
+    padding: 20px;
+}
+
+.carta-secreta.activa {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.carta-contenido {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 390px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 38px 27px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(244, 207, 88, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #fff7ee,
+            #f8dce3
+        );
+
+    color: #4b1624 !important;
+
+    border:
+        2px solid rgba(244, 207, 88, 0.45);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(244, 207, 88, 0.25);
+
+    transform:
+        scale(0.7)
+        translateY(40px);
+
+    transition:
+        transform 0.6s
+        cubic-bezier(.17,.67,.35,1.3);
+}
+
+.carta-secreta.activa
+.carta-contenido {
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+.sobre {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    animation:
+        latidoCarta
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+.carta-contenido h3 {
+    color: #6d263b !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    margin-bottom: 22px;
+
+    opacity: 1 !important;
+}
+
+.carta-contenido p {
+    color: #4b1624 !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+    opacity: 1 !important;
+}
+
+.carta-contenido .mensaje-final {
+    color: #9b5368 !important;
+
+    font-weight: bold;
+
+    font-size: 1.1rem;
+
+    margin-top: 25px;
+}
+
+.cerrar-carta {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: none;
+
+    background: #6d263b;
+
+    color: white !important;
+
+    font-size: 25px;
+
+    line-height: 38px;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    animation: none;
+}
+
+.cerrar-carta:hover {
+    transform:
+        rotate(90deg)
+        scale(1.1);
+
+    background: #9b5368;
+}
+
+@keyframes latidoCarta {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+#botonMusica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+    padding: 12px 18px;
+    border-radius: 50px;
+    background: rgba(244, 207, 88, 0.95);
+    color: #3b0d19;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: musicaFlotando 3s ease-in-out infinite;
+}
+
+#botonMusica:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+@keyframes musicaFlotando {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
